@@ -1,0 +1,503 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: "Poppins", monospace;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+.dark-mode {
+    background: #111;
+    color: white;
+}
+.light-mode {
+    background: #f5f5f5;
+    color: black;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #000000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 100;
+    font-family: "Roboto Slab", serif;
+    color: white;
+}
+
+.logo h3{
+    font-weight: 300;
+    font-size: 40px;
+    margin: 0px;
+}
+
+.logo img {
+    width: 50px;
+    padding: 0px 20px 0px 0px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+nav ul li {
+    position: relative;
+    display: inline;
+    padding: 15px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: font-weight 0.3s ease;
+}
+nav ul li a:hover {
+    font-weight: bold;
+}
+
+/* Theme Toggle */
+.theme-toggle input {
+    display: none;
+}
+.theme-toggle label {
+    width: 40px;
+    height: 20px;
+    background: gray;
+    display: inline-block;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+}
+.theme-toggle label::after {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+    left: 2px;
+    top: 1px;
+    transition: 0.3s;
+}
+.theme-toggle input:checked + label {
+    background: gray;
+}
+.theme-toggle input:checked + label::after {
+    left: 20px;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    padding: 20px 50px;
+}
+.background-pattern {
+    position: absolute;
+    z-index: -1;
+    opacity: 25%;
+}
+.background-pattern img{
+    width: 95%;
+    height: 95%;
+    margin-top: 70px;
+}
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left {
+    flex: 1;
+    justify-content: space-between;
+}
+
+.left p{
+    font-size: 40px;
+    margin-bottom: 0px;
+}
+
+.left h1 {
+    font-size: 70px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.left h2 {
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a img {
+    filter: invert(100%);
+    width: 50px;
+}
+
+.social-icons-light-mode a img{
+    filter: none;
+    width: 50px;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+/* Profile Picture */
+.right {
+    display: flex;
+    position: relative;
+    margin-right: 140px;
+    justify-content: center;
+}
+
+.profile-pic {
+    width: 350px;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.hover-pattern img{
+    position: relative;
+    z-index: 0;
+    transform: rotate(90deg);
+    width: 380px;
+}
+
+.hover-pattern {
+    display: block;
+    position: absolute;
+    bottom: 55px;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.5s ease-in-out;
+}
+
+.right:hover .hover-pattern {
+    transform: scaleY(1.1);
+}
+
+/* About Section */
+.about {
+    text-align: center;
+    margin: 80px 0px 0px 0px;
+    padding: 10px;
+}
+
+.about p {
+    margin: 0px;
+}
+
+.about h2{
+    font-size: 50px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/* About */
+
+.about-section {
+    margin-top: -40px;
+    position: relative;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    padding: 20px 50px;
+}
+
+.about-section .content {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-about {
+    display: flex;
+    padding: 20px;
+    margin-left: 70px;
+}
+.left-about img {
+    width: 350px;
+    border-radius: 10%;
+}
+.right-about {
+    display: flex;
+    margin-left: 50px;
+    padding: 0px 40px;
+}
+.right-about p{
+    padding: 20px 50px;
+    font-size: 18px;
+}
+
+/* Experience Section */
+
+.experience {
+    display: flexbox;
+    position: relative;
+    text-align: center;
+    margin: 50px 0px 50px 0px;
+    padding: 10px;
+}
+
+.experience p {
+    margin: 0px;
+}
+
+.experience h2{
+    font-size: 50px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.experience-content {
+    margin-top: 0px;
+    position: relative;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0px 50px;
+}
+
+.experience-list {
+    justify-content: center;
+    text-align: center;
+    margin-top: 88px;
+}
+
+.experience-item {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.text h2 {
+    font-size: 30px;
+    margin: 0;
+}
+
+.text p {
+    margin: 5px 0;
+}
+
+/* Projects Section */
+
+.projects {
+    position: relative;
+    text-align: center;
+    margin: 100px 0px 20px 0px;
+    padding: 10px;
+}
+
+.projects p {
+    margin: 0px;
+}
+
+.projects h2{
+    font-size: 50px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.projects-content {
+    margin-top: 0px;
+    position: relative;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    padding: 50px 50px 0px 0px;
+}
+
+.projects-content {
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Projects Container */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Equal Columns */
+    gap: 20px;
+    max-width: 900px;
+    margin-top: 60px;
+    margin-left: 100px;
+    width: 100%;
+}
+
+/* Project Box */
+.project {
+    background: #a0a0a0a1;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.project p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.project a {
+    display: inline-block;
+    text-decoration: none;
+    color: #050505;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.project a:hover {
+    text-decoration: underline;
+}
+
+.github-box {
+    margin-top: 120px;
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    background: #a0a0a0a1;
+    padding: 15px;
+    border-radius: 10px;
+    max-height: 150px;
+    max-width: 150px;
+}
+
+.github-box p {
+    font-size: 15px;
+    font-weight: 200;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+}
+
+.github-box img {
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    transition: transform 0.3s ease;
+}
+
+.github-box img:hover {
+    transform: scale(1.1);
+}
+
+/* Contact Me section */
+
+.contact {
+    position: relative;
+    text-align: center;
+    margin: 20px 0px 20px 0px;
+    padding: 10px;
+}
+
+.contact p {
+    margin: 0px;
+}
+
+.contact h2{
+    font-size: 50px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.contact-content {
+    margin-top: 20px;
+    position: relative;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    padding: 50px 50px 0px 0px;
+}
+
+/* Contact Container */
+.contact-container {
+    margin-top: 25px;
+    margin-left: 220px;
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.contact-logo img {
+    border-radius: 50%;
+    width: 350px;
+    height: auto;
+}
+
+.contact-details {
+    margin-left: 100px;
+    padding: 20px;
+    text-align: left;
+}
+
+.contact-details p {
+    font-size: 20px;
+    margin: 0px;
+}
+
+.username {
+    font-family: "Roboto Slab", serif;
+    font-weight: 400;
+    font-size: 60px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    margin-top: 30px;
+}
+
+.social-icons a img {
+    width: 50px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.2);
+}
+
+/* Footer Section */
+
+.footer {
+    position: relative;
+    text-align: center;
+    margin-top: 100px;
+    padding: 10px;
+    background-color: #969094;
+    color: #000;
+}
+
+.footer p {
+    margin: 0px;
+}
